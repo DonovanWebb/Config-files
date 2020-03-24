@@ -1,0 +1,66 @@
+!-----------------------------------------------------------------------------
+! File: gruvbox-dark.xresources
+! Description: Retro groove colorscheme generalized
+! Author: morhetz <morhetz@gmail.com>
+! Source: https://github.com/morhetz/gruvbox-generalized
+! Last Modified: 6 Sep 2014
+! -----------------------------------------------------------------------------
+
+! hard contrast: *background: #1d2021
+*background: #1d2021 
+! soft contrast: *background: #32302f
+*foreground: #e5e5e5
+! Black + DarkGrey
+*color0:  #1d2021 
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + white NO! ORanges
+*color7:  #d65d0e
+*color15: #fe8019
+
+!scheme: "Helios"
+!author: "Alex Meyer (https://github.com/reyemxela)"
+!*color0: #1d2021 
+!*color1: #303335
+!*color2: #434749
+!*color3: #565b5e
+!*color4: #cdcdcd
+!*color5: #d5d5d5
+!*color6: #dddddd
+!*color7: #e5e5e5
+!*color8: #d72638
+!*color9: #eb8413
+!*color10: #f19d1a
+!*color11: #88b92d
+!*color12: #1ba595
+!*color13: #1e8bac
+!*color14: #be4264
+!*color15: #c85e0d
+!
+Xft.dpi: 160
+
+URxvt.font: xft:terminus:size=20
+
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+URxvt.scrollstyle: rxvt
+URxvt.transparent: false
+
