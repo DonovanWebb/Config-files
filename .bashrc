@@ -1,11 +1,14 @@
 set -o vi
 bind 'set show-all-if-ambiguous on'
+alias diamond="ssh -Y yig62234@nx.diamond.ac.uk"
 
 export HISTIGNORE="&:ls:exit:la:l:history:ps"
 export HISTSIZE=100000
 export HISTCONTROL=ignoreboth:erasedups
 export TERM=xterm-256color
 export PATH="$PATH:/home/lexi/bin/"
+export PATH="$PATH:/opt/relion/build/bin/"
+
 xset b off
 
 # Functions
@@ -42,32 +45,31 @@ bar() {
 # #########
 
 #source it-completion.bash
-source ~/bin/git-prompt.sh
+#source ~/bin/git-prompt.sh
 
 # Prompt Settings
 # ###############
 
-if [[ $PROMPT_COMMAND != *"bar"* ]]; then
-  export PROMPT_COMMAND="bar; ${PROMPT_COMMAND}"
-fi
+# export GIT_PS1_SHOWDIRTYSTATE=1
+# export GIT_PS1_SHOWSTASHSTATE=1
+# export GIT_PS1_SHOWUNTRACKEDFILES=1
+# export GIT_PS1_SHOWCOLORHINTS=1
+# export GIT_PS1_SHOWUPSTREAM="verbose name"
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-export GIT_PS1_SHOWSTASHSTATE=1
-export GIT_PS1_SHOWUNTRACKEDFILES=1
-export GIT_PS1_SHOWCOLORHINTS=1
-export GIT_PS1_SHOWUPSTREAM="verbose name"
-
-env() {
+env_py() {
 ENV_VAR=$CONDA_DEFAULT_ENV
 if ! [[ -z "$ENV_VAR" ]]; then
   printf "(${ENV_VAR}) "
 fi
 }
 
-git_prompt_command='__git_ps1 "\033[0;31m$(env)\033[00m\[\033[0;36m\]\u@\h \[\033[1;36m\]\w\[\033[0m\]" "\nႵ " '
-if [[ $PROMPT_COMMAND != *"${git_prompt_command}"* ]]; then
-  export PROMPT_COMMAND="${git_prompt_command}; ${PROMPT_COMMAND}"
-fi
+# git_prompt_command='__git_ps1 "\033[0;31m\]\$(env_py)\033[00m\[\033[0;36m\]\u@\h \[\033[1;36m\]\w\[\033[0m\]" "\n# " '
+# if [[ $PROMPT_COMMAND != *"${git_prompt_command}"* ]]; then
+#   export PROMPT_COMMAND="${git_prompt_command}; ${PROMPT_COMMAND}"
+# fi
+
+PROMPT_COMMAND='PS1="$(bar)\n\033[0;31m\]\$(env_py)\033[00m\[\033[0;36m\]\u@\h \[\033[1;36m\]\w\[\033[0m\]\n$ "'
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
